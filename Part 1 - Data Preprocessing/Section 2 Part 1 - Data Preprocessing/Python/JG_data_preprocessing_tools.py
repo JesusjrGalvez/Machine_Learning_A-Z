@@ -25,6 +25,8 @@ X[:, 1:3] = imputer.transform(X[:, 1:3])
 
 from sklearn.preprocessing import OneHotEncoder
 from sklearn.compose import ColumnTransformer
+
+# below, the [0] corresponds with the index of the column where you want to apply one hot enconding
 ct = ColumnTransformer(transformers=[('encoder', OneHotEncoder(), [0])],remainder='passthrough' )
 X = np.array(ct.fit_transform(X))
 
